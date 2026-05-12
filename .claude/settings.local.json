@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python)",
+      "Bash(Get-ChildItem \"D:\\\\01_Obsidian\\\\AITOOL_SMIT\\\\_Slide \\(1\\).pdf\" -ErrorAction SilentlyContinue)",
+      "Bash(cd D:\\\\\\\\01_Obsidian\\\\\\\\AITOOL_SMIT)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh auth *)"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+
+# Obsidian (optional - keep vault files)
+.obsidian/plugins/
+.obsidian/workspace.json
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
+
+# Temp
+temp/
+tmp/
