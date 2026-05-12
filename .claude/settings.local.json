@@ -5,7 +5,16 @@
       "Bash(Get-ChildItem \"D:\\\\01_Obsidian\\\\AITOOL_SMIT\\\\_Slide \\(1\\).pdf\" -ErrorAction SilentlyContinue)",
       "Bash(cd D:\\\\\\\\01_Obsidian\\\\\\\\AITOOL_SMIT)",
       "WebFetch(domain:github.com)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(winget install *)",
+      "mcp__Claude_in_Chrome__switch_browser",
+      "WebSearch",
+      "Bash(mkdir -p \"/d/01_Obsidian/AITOOL_SMIT_ADMIN/docs\" && echo \"폴더 생성 완료\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
