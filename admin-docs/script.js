@@ -379,4 +379,4 @@ async function pushToGithub() {
     }
 }
 
-console.log('관리자 대시보드 로드됨 ✅';
+console.log('관리자 대시보드 로드됨 ✅');
