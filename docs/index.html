@@ -36,7 +36,8 @@
         // data.json에서 글 로드
         async function loadPosts() {
             try {
-                const response = await fetch('data.json');
+                const basePath = window.location.pathname.includes('/Blog/') ? '/Blog/' : './';
+                const response = await fetch(basePath + 'data.json');
                 const posts = await response.json();
 
                 const postsGrid = document.getElementById('posts-grid');
