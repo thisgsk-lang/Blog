@@ -272,42 +272,59 @@ graph TB
                 <div class="diagram-title">📁 파일 구조</div>
                 <div class="diagram-description">GitHub 저장소의 디렉토리 구조</div>
                 <div class="diagram-container">
-                    <div class="mermaid">
-graph TD
-    Root["Obsidian (블로그)"]
-
-    Root --> Docs["📁 docs/"]
-    Docs --> DIndex["index.html"]
-    Docs --> DAbout["about.html"]
-    Docs --> DStyle["style.css"]
-    Docs --> Posts["📁 posts/"]
-    Posts --> P1["01-AI도구.html"]
-    Posts --> P2["02-GitHub.html"]
-    Posts --> P3["03-블로그.html"]
-    Posts --> P4["04-시스템아키텍처.html"]
-    Posts --> P5["diagram.html ⭐"]
-
-    Root --> OBS["📁 Obsidian/"]
-    Root --> RAW["📁 Raw/"]
-    Root --> WIKI["📁 Wiki/"]
-    Root --> Config["README.md"]
-    Root --> GitIgnore[".gitignore"]
-
-    style Root fill:#fff9c4
-    style Docs fill:#f0f4c3
-    style Posts fill:#e8f5e9
-    style P5 fill:#ffebee
-    style DIndex fill:#bbdefb
-    style DStyle fill:#c8e6c9
+                    <div style="font-family: 'Courier New', monospace; padding: 20px; background: #f8f9fa; border-radius: 8px; font-size: 13px; line-height: 1.8;">
+                        <div style="color: #d4af37; font-weight: bold;">📦 Obsidian (GitHub Repository)</div>
+                        <div style="margin-left: 20px;">
+                            <div style="color: #667eea;">📁 docs/ <span style="color: #999; font-size: 11px;">(GitHub Pages 배포)</span></div>
+                            <div style="margin-left: 30px;">
+                                <div>📄 index.html</div>
+                                <div>📄 about.html</div>
+                                <div>📄 diagram.html ⭐</div>
+                                <div>📄 style.css</div>
+                                <div style="color: #667eea;">📁 posts/</div>
+                                <div style="margin-left: 20px;">
+                                    <div>📄 01-AI도구로시작하는첫주.html</div>
+                                    <div>📄 02-GitHub를활용한협업.html</div>
+                                    <div>📄 03-블로그를한시간에만들기.html</div>
+                                    <div>📄 04-시스템아키텍처.html</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <div style="color: #667eea;">📁 Obsidian/ <span style="color: #999; font-size: 11px;">(Obsidian Vault)</span></div>
+                            <div style="margin-left: 20px;">
+                                <div>📁 Index/</div>
+                                <div>📁 Raw/</div>
+                                <div>📁 Wiki/</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <div style="color: #667eea;">📁 .claude/ <span style="color: #999; font-size: 11px;">(Claude Code 설정)</span></div>
+                            <div style="margin-left: 20px;">
+                                <div>📄 launch.json</div>
+                                <div>📄 settings.json</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <div>📄 README.md</div>
+                            <div>📄 .gitignore</div>
+                            <div>📄 HANDOFF.md</div>
+                        </div>
                     </div>
                 </div>
                 <div class="legend">
                     <strong>📌 설명:</strong>
                     <div class="legend-item">
-                        <strong>docs/</strong>: 웹사이트 메인 폴더 (GitHub Pages로 배포)
+                        <strong>docs/</strong>: GitHub Pages 배포 폴더 (웹사이트 메인)
                     </div>
                     <div class="legend-item">
-                        <strong>docs/posts/</strong>: 각 블로그 포스트 HTML 파일 위치
+                        <strong>docs/posts/</strong>: 블로그 포스트 HTML 파일 모음
+                    </div>
+                    <div class="legend-item">
+                        <strong>Obsidian/</strong>: Obsidian Vault (마크다운 원본 저장)
+                    </div>
+                    <div class="legend-item">
+                        <strong>.claude/</strong>: Claude Code 개발 환경 설정
                     </div>
                     <div class="legend-item">
                         <strong>diagram.html ⭐</strong>: 현재 페이지 (시스템 아키텍처 다이어그램)
