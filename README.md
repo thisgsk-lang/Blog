@@ -2,7 +2,7 @@
 
 기획부터 배포까지 90분 안에 블로그 만들기
 
-**라이브**: https://thisgsk-lang.github.io/Obsidian/
+**라이브**: https://thisgsk-lang.github.io/Blog/
 
 ---
 
