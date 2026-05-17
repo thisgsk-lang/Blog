@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시스템 아키텍처 다이어그램 | AI 도구 활용</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        .diagram-container {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+
+        .diagram-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 30px 0 20px 0;
+            color: #333;
+        }
+
+        .diagram-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .tab-button:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .tab-button.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .diagram-content {
+            display: none;
+        }
+
+        .diagram-content.active {
+            display: block;
+        }
+
+        .mermaid {
+            display: flex;
+            justify-content: center;
+        }
+
+        .legend {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            gap: 10px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1><a href="index.html">AI 도구 활용</a></h1>
+            <ul>
+                <li><a href="index.html">홈</a></li>
+                <li><a href="about.html">소개</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="post-content">
+            <h1>🎯 시스템 아키텍처 다이어그램</h1>
+            <p><small>작성일: 2026-05-17</small></p>
+
+            <p>
+                AI 도구 활용 프로젝트의 전체 시스템 아키텍처, 데이터 흐름,
+                CRUD 작업 흐름을 아래에서 확인하실 수 있습니다.
+                탭을 클릭하여 다양한 다이어그램을 살펴보세요.
+            </p>
+
+            <div class="tabs">
+                <button class="tab-button active" onclick="switchTab(event, 'architecture')">
+                    📐 시스템 구성
+                </button>
+                <button class="tab-button" onclick="switchTab(event, 'dataflow')">
+                    🔄 데이터 흐름
+                </button>
+                <button class="tab-button" onclick="switchTab(event, 'crud')">
+                    ⚙️ CRUD 흐름
+                </button>
+                <button class="tab-button" onclick="switchTab(event, 'filestructure')">
+                    📁 파일 구조
+                </button>
+            </div>
+
+            <!-- 시스템 구성 다이어그램 -->
+            <div id="architecture" class="diagram-content active">
+                <div class="diagram-title">📐 시스템 구성도</div>
+                <div class="diagram-description">고객용 블로그와 관리자 대시보드의 관계</div>
+                <div class="diagram-container">
+                    <div class="mermaid">
+graph TB
+    subgraph GitHub["🔗 GitHub Pages"]
+        Blog["📄 고객용 블로그<br/>thisgsk-lang.github.io/Obsidian"]
+        Admin["⚙️ 관리자 대시보드<br/>thisgsk-lang.github.io/Obsidian-admin"]
+    end
+
+    subgraph Frontend["🎨 Frontend Layer"]
+        BlogUI["블로그 UI<br/>- HTML5<br/>- CSS3"]
+        AdminUI["대시보드 UI<br/>- HTML5<br/>- CSS3<br/>- JavaScript"]
+    end
+
+    subgraph Storage["💾 Data Storage"]
+        LS["localStorage<br/>(JSON)"]
+    end
+
+    Blog --> BlogUI
+    Admin --> AdminUI
+    AdminUI -.->|Write| LS
+    AdminUI -.->|Read| LS
+    BlogUI -.->|Read| LS
+
+    style Blog fill:#e1f5ff
+    style Admin fill:#fff3e0
+    style LS fill:#f3e5f5
+    style GitHub fill:#f5f5f5
+                    </div>
+                </div>
+                <div class="legend">
+                    <strong>📌 설명:</strong>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #e1f5ff;"></div>
+                        고객용 블로그: 공개된 포스트 표시
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #fff3e0;"></div>
+                        관리자 대시보드: 글 작성/수정/삭제
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #f3e5f5;"></div>
+                        localStorage: 모든 글 데이터 저장
+                    </div>
+                </div>
+            </div>
+
+            <!-- 데이터 흐름 다이어그램 -->
+            <div id="dataflow" class="diagram-content">
+                <div class="diagram-title">🔄 데이터 흐름도</div>
+                <div class="diagram-description">관리자 대시보드와 고객용 블로그 간의 데이터 이동</div>
+                <div class="diagram-container">
+                    <div class="mermaid">
+graph LR
+    User["👤 사용자"]
+    Admin["⚙️ 관리자<br/>대시보드"]
+    LS["💾 localStorage"]
+    Blog["📄 고객용<br/>블로그"]
+    Reader["👥 독자"]
+
+    User -->|새 글 작성<br/>수정/삭제| Admin
+    Admin -->|1. 저장 요청| LS
+    LS -->|2. 저장 완료| Admin
+    LS -->|3. 글 목록 조회| Blog
+    Blog -->|4. 공개된 글 표시| Reader
+
+    style User fill:#bbdefb
+    style Admin fill:#ffe0b2
+    style LS fill:#e1bee7
+    style Blog fill:#c8e6c9
+    style Reader fill:#ffccbc
+                    </div>
+                </div>
+                <div class="legend">
+                    <strong>📌 설명:</strong>
+                    <div class="legend-item">
+                        관리자가 글을 작성하면 localStorage에 JSON 형식으로 저장됩니다.
+                    </div>
+                    <div class="legend-item">
+                        고객용 블로그는 localStorage에서 공개된 글만 읽어서 표시합니다.
+                    </div>
+                </div>
+            </div>
+
+            <!-- CRUD 작업 흐름 -->
+            <div id="crud" class="diagram-content">
+                <div class="diagram-title">⚙️ CRUD 작업 흐름</div>
+                <div class="diagram-description">Create, Read, Update, Delete 작업의 상세 흐름</div>
+                <div class="diagram-container">
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <thead>
+                            <tr style="background: #f5f5f5; border-bottom: 2px solid #ddd;">
+                                <th style="padding: 12px; text-align: left; font-weight: 600;">작업</th>
+                                <th style="padding: 12px; text-align: left; font-weight: 600;">설명</th>
+                                <th style="padding: 12px; text-align: left; font-weight: 600;">단계</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 12px; background: #fff3e0;"><strong>📝 CREATE</strong></td>
+                                <td style="padding: 12px;">새로운 글 작성</td>
+                                <td style="padding: 12px;">1. 제목, 내용 입력 → 2. 저장 → 3. localStorage 저장</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 12px; background: #e3f2fd;"><strong>📖 READ</strong></td>
+                                <td style="padding: 12px;">글 목록 조회</td>
+                                <td style="padding: 12px;">1. 콘텐츠 관리 탭 → 2. localStorage 조회 → 3. 테이블 표시</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 12px; background: #f3e5f5;"><strong>✏️ UPDATE</strong></td>
+                                <td style="padding: 12px;">글 수정</td>
+                                <td style="padding: 12px;">1. 수정 버튼 → 2. 내용 로드 → 3. 수정 → 4. 저장</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; background: #ffebee;"><strong>🗑️ DELETE</strong></td>
+                                <td style="padding: 12px;">글 삭제</td>
+                                <td style="padding: 12px;">1. 삭제 버튼 → 2. 확인 → 3. localStorage에서 제거</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 파일 구조 -->
+            <div id="filestructure" class="diagram-content">
+                <div class="diagram-title">📁 파일 구조</div>
+                <div class="diagram-description">GitHub 저장소의 디렉토리 구조</div>
+                <div class="diagram-container">
+                    <div class="mermaid">
+graph TD
+    Root["Obsidian (블로그)"]
+
+    Root --> Docs["📁 docs/"]
+    Docs --> DIndex["index.html"]
+    Docs --> DAbout["about.html"]
+    Docs --> DStyle["style.css"]
+    Docs --> Posts["📁 posts/"]
+    Posts --> P1["01-AI도구.html"]
+    Posts --> P2["02-GitHub.html"]
+    Posts --> P3["03-블로그.html"]
+    Posts --> P4["04-시스템아키텍처.html"]
+    Posts --> P5["diagram.html ⭐"]
+
+    Root --> OBS["📁 Obsidian/"]
+    Root --> RAW["📁 Raw/"]
+    Root --> WIKI["📁 Wiki/"]
+    Root --> Config["README.md"]
+    Root --> GitIgnore[".gitignore"]
+
+    style Root fill:#fff9c4
+    style Docs fill:#f0f4c3
+    style Posts fill:#e8f5e9
+    style P5 fill:#ffebee
+    style DIndex fill:#bbdefb
+    style DStyle fill:#c8e6c9
+                    </div>
+                </div>
+                <div class="legend">
+                    <strong>📌 설명:</strong>
+                    <div class="legend-item">
+                        <strong>docs/</strong>: 웹사이트 메인 폴더 (GitHub Pages로 배포)
+                    </div>
+                    <div class="legend-item">
+                        <strong>docs/posts/</strong>: 각 블로그 포스트 HTML 파일 위치
+                    </div>
+                    <div class="legend-item">
+                        <strong>diagram.html ⭐</strong>: 현재 페이지 (시스템 아키텍처 다이어그램)
+                    </div>
+                </div>
+            </div>
+
+            <a href="posts/04-시스템아키텍처.html" class="back-link">← 시스템 아키텍처 포스트로 돌아가기</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AI 도구 활용. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchTab(event, tabName) {
+            // 모든 콘텐츠 숨기기
+            const contents = document.querySelectorAll('.diagram-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // 모든 탭 버튼 비활성화
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // 선택된 탭 표시
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+
+            // Mermaid 다이어그램 다시 렌더링
+            mermaid.contentLoaded();
+        }
+
+        // 초기 Mermaid 설정
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: { useMaxWidth: true }
+        });
+    </script>
+</body>
+</html>
