@@ -42,7 +42,7 @@ function updateContentTable() {
 }
 
 // 글 작성/수정 폼 제출
-document.querySelector('.editor-form').addEventListener('submit', (e) => {
+document.querySelector('.editor-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const editId = document.getElementById('edit-id').value;
@@ -68,7 +68,6 @@ document.querySelector('.editor-form').addEventListener('submit', (e) => {
             posts[postIndex].published = publish;
             posts[postIndex].updatedAt = new Date().toISOString();
         }
-        alert('글이 수정되었습니다!');
     } else {
         // 새 글 생성
         const post = {
@@ -81,10 +80,20 @@ document.querySelector('.editor-form').addEventListener('submit', (e) => {
             updatedAt: new Date().toISOString()
         };
         posts.push(post);
-        alert('글이 저장되었습니다!');
     }
 
     localStorage.setItem('posts', JSON.stringify(posts));
+
+    // GitHub에 자동 업로드 (공개된 글만)
+    if (publish) {
+        const success = await pushToGithub();
+        if (!success) {
+            alert('글은 저장되었지만 GitHub 업로드에 실패했습니다.');
+            return;
+        }
+    }
+
+    alert('글이 저장되었습니다!');
 
     // 폼 초기화 및 목록으로 돌아가기
     document.querySelector('.editor-form').reset();
@@ -134,7 +143,7 @@ function attachTableButtonHandlers() {
 
     // 공개/초안 토글 버튼
     document.querySelectorAll('.toggle-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', async (e) => {
             const postId = e.target.getAttribute('data-id');
             let posts = JSON.parse(localStorage.getItem('posts') || '[]');
             const post = posts.find(p => p.id == postId);
@@ -143,6 +152,13 @@ function attachTableButtonHandlers() {
                 post.published = !post.published;
                 post.updatedAt = new Date().toISOString();
                 localStorage.setItem('posts', JSON.stringify(posts));
+
+                // GitHub에 자동 업로드
+                const success = await pushToGithub();
+                if (success) {
+                    alert('포스트가 발행되었습니다! 블로그에 반영되었습니다.');
+                }
+
                 updateContentTable();
             }
         });
@@ -282,12 +298,85 @@ document.getElementById('export-markdown-btn').addEventListener('click', () => {
     alert('마크다운 파일이 다운로드되었습니다!');
 });
 
-// Cloudflare 로그인 알림
+// GitHub 토큰 저장
+document.getElementById('save-token-btn').addEventListener('click', () => {
+    const token = document.getElementById('github-token').value;
+    if (!token) {
+        alert('토큰을 입력해주세요');
+        return;
+    }
+    localStorage.setItem('github_token', token);
+    alert('토큰이 저장되었습니다!');
+    document.getElementById('github-token').value = '';
+});
+
+// 페이지 로드 시 토큰 확인
 window.addEventListener('load', () => {
-    const loginNotice = document.querySelector('.info-box');
-    if (loginNotice) {
-        loginNotice.innerHTML += '<br><br>✨ <strong>Cloudflare Workers</strong>를 통해 로그인 기능이 추가될 예정입니다.<br>그 때까지는 이 대시보드에서 자유롭게 작업할 수 있습니다.';
+    const savedToken = localStorage.getItem('github_token');
+    if (savedToken) {
+        document.getElementById('github-token').placeholder = '✓ 토큰이 저장되어 있습니다';
+        document.getElementById('github-token').value = '';
     }
 });
 
-console.log('관리자 대시보드 로드됨 ✅');
+// GitHub에 파일 업로드
+async function pushToGithub() {
+    const token = localStorage.getItem('github_token');
+    if (!token) {
+        alert('먼저 설정에서 GitHub 토큰을 입력해주세요');
+        return false;
+    }
+
+    const posts = JSON.parse(localStorage.getItem('posts') || '[]');
+    const data = JSON.stringify(posts, null, 2);
+
+    try {
+        // 현재 파일 조회
+        const getResponse = await fetch(
+            'https://api.github.com/repos/thisgsk-lang/Blog/contents/docs/data.json',
+            {
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            }
+        );
+
+        let sha = null;
+        if (getResponse.ok) {
+            const fileData = await getResponse.json();
+            sha = fileData.sha;
+        }
+
+        // 파일 업로드
+        const updateResponse = await fetch(
+            'https://api.github.com/repos/thisgsk-lang/Blog/contents/docs/data.json',
+            {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    message: '📝 Admin 대시보드에서 포스트 업데이트',
+                    content: btoa(data),
+                    sha: sha
+                })
+            }
+        );
+
+        if (updateResponse.ok) {
+            console.log('GitHub에 업로드 완료!');
+            return true;
+        } else {
+            const error = await updateResponse.json();
+            alert('업로드 실패: ' + (error.message || '알 수 없는 오류'));
+            return false;
+        }
+    } catch (err) {
+        alert('오류 발생: ' + err.message);
+        return false;
+    }
+}
+
+console.log('관리자 대시보드 로드됨 ✅';
