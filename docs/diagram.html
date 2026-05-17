@@ -200,34 +200,30 @@ graph TB
                 <div class="diagram-title">🔄 데이터 흐름도</div>
                 <div class="diagram-description">관리자 대시보드와 고객용 블로그 간의 데이터 이동</div>
                 <div class="diagram-container">
-                    <div class="mermaid">
-graph LR
-    User["👤 사용자"]
-    Admin["⚙️ 관리자<br/>대시보드"]
-    LS["💾 localStorage"]
-    Blog["📄 고객용<br/>블로그"]
-    Reader["👥 독자"]
-
-    User -->|새 글 작성<br/>수정/삭제| Admin
-    Admin -->|1. 저장 요청| LS
-    LS -->|2. 저장 완료| Admin
-    LS -->|3. 글 목록 조회| Blog
-    Blog -->|4. 공개된 글 표시| Reader
-
-    style User fill:#bbdefb
-    style Admin fill:#ffe0b2
-    style LS fill:#e1bee7
-    style Blog fill:#c8e6c9
-    style Reader fill:#ffccbc
+                    <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 8px;">
+                        <div style="font-size: 14px; margin-bottom: 30px;">
+                            <div style="margin: 10px 0;"><strong>👤 사용자</strong></div>
+                            <div style="font-size: 20px; color: #667eea;">↓</div>
+                            <div style="margin: 10px 0; padding: 15px; background: #fff3e0; border-radius: 6px;"><strong>⚙️ 관리자 대시보드</strong><br/>새 글 작성/수정/삭제</div>
+                            <div style="font-size: 20px; color: #667eea;">↓</div>
+                            <div style="margin: 10px 0; padding: 15px; background: #f3e5f5; border-radius: 6px;"><strong>💾 localStorage</strong><br/>JSON 형식 저장</div>
+                            <div style="font-size: 20px; color: #667eea;">↓</div>
+                            <div style="margin: 10px 0; padding: 15px; background: #e3f2fd; border-radius: 6px;"><strong>📄 고객용 블로그</strong><br/>공개된 글만 표시</div>
+                            <div style="font-size: 20px; color: #667eea;">↓</div>
+                            <div style="margin: 10px 0;"><strong>👥 독자</strong></div>
+                        </div>
                     </div>
                 </div>
                 <div class="legend">
-                    <strong>📌 설명:</strong>
+                    <strong>📌 데이터 흐름:</strong>
                     <div class="legend-item">
-                        관리자가 글을 작성하면 localStorage에 JSON 형식으로 저장됩니다.
+                        1️⃣ 관리자가 글을 작성하면 localStorage에 JSON 형식으로 저장됩니다.
                     </div>
                     <div class="legend-item">
-                        고객용 블로그는 localStorage에서 공개된 글만 읽어서 표시합니다.
+                        2️⃣ 고객용 블로그는 localStorage에서 공개된 글만 읽어서 독자에게 표시합니다.
+                    </div>
+                    <div class="legend-item">
+                        3️⃣ 이 모든 과정이 클라이언트 사이드에서 처리됩니다.
                     </div>
                 </div>
             </div>
