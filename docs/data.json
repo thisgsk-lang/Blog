@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "프로젝트 진행 기록 — W10 블로그 GitHub Pages 라이브화",
+    "content": "## 🎯 프로젝트 개요\n\n- **기간**: 2026-05-12\n- **최종 결과**: https://thisgsk-lang.github.io/Blog/\n- **방식**: HTML 정적 사이트 + GitHub Pages 자동 배포\n\n## 📋 진행 흐름\n\n1. 슬라이드 PDF 정독 → GitHub Pages 라이브 목표 명확화\n2. Obsidian 골격 구성 (Wiki/, Index.md)\n3. HTML 정적 사이트 생성 (6개 파일)\n4. GitHub 저장소 연결 (thisgsk-lang/Blog)\n5. `site/` → `docs/` 폴더 변경 (GH Pages 요구사항)\n6. `.gitignore` + `README.md` 추가\n7. **403 권한 에러** → `gh auth login`으로 해결\n8. `gh auth switch` + `git push` 성공\n9. GitHub Pages API로 자동 활성화\n\n**총 소요 시간**: ~30분\n\n## 🔑 핵심 3가지 결정\n\n### 1. Plan B 디자인 적용\n- W09 Claude Design 자산 없음\n- 슬라이드 22페이지 Plan B 따라 minimal HTML 즉석 제작\n- 흰 바탕 + 검은 글씨 + max-width 720px\n\n### 2. 단일 저장소 전략\n- `Obsidian/` = 콘텐츠 작성소\n- `docs/` = GitHub Pages 배포 루트\n- GitHub Pages는 `/docs` 폴더만 인식\n\n### 3. 모든 경로를 상대 경로로\n- 절대 경로(`/`) 사용 금지\n- `../style.css`, `../index.html` 방식\n- 경로 문제 사전 차단\n\n## ⚠️ 막힌 지점\n\n**다중 GitHub 계정 환경에서 push 403 에러**\n\n해결책: `gh auth login` → 계정 인증 → `gh auth switch`\n\n## 📁 최종 구조\n\n```\nBlog/\n├── README.md\n├── HANDOFF.md\n├── Obsidian/          # 콘텐츠\n├── admin-docs/        # 관리자 대시보드\n└── docs/              # GitHub Pages 배포\n    ├── index.html\n    ├── about.html\n    ├── style.css\n    ├── data.json      # 동적 포스트 데이터\n    └── posts/\n```\n\n## 🛠️ 사용 기술\n\n- **Claude Code** (Opus 4.7) — 코드 생성 및 자동화\n- **gh CLI** — GitHub 인증 및 API 호출\n- **git** — 버전 관리\n- **GitHub Pages** — 정적 사이트 호스팅\n\n## ✅ 결과\n\n- 빈 폴더 → 13개 파일 자동 생성\n- 권한 문제 1회 발생 및 해결\n- GitHub Pages 자동 활성화\n- **라이브 배포 성공** 🚀",
+    "tags": ["프로젝트", "GitHub", "자동화", "CLI"],
+    "published": true,
+    "createdAt": "2026-05-17T00:00:00Z",
+    "updatedAt": "2026-05-17T00:00:00Z"
+  }
+]
