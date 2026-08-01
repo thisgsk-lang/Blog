@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\thisg\\\\OneDrive\\\\문서\\\\AITOOL_SMIT\" -Recurse -Directory | Where-Object {$_.Name -match \"RAW|WIKI\"} | Select-Object FullName)",
+      "PowerShell(Get-Content \"$env:APPDATA\\\\Obsidian\\\\obsidian.json\" -Encoding UTF8 | ConvertFrom-Json | ConvertTo-Json)"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "accentColor": "#f56a00",
+  "theme": "obsidian",
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [
+    "claude-style"
+  ],
+  "interfaceFontFamily": ""
+}

@@ -1,0 +1,7 @@
+📁 openHaul_Project/
+│
+├── 📁 01_Requirements/       # 고객 요구사항, 스펙 정의서, 규격서 (NEBS 등)
+├── 📁 02_Design_Docs/        # 3D/2D CAD 파일, PDF 도면, 슬롯 매트릭스 엑셀
+├── 📁 03_Post_Mortem/        # 앞서 작성한 이슈별/트러블슈팅별 MD 파일 (지식화)
+├── 📁 04_Meetings_Notes/     # 유관 부서(구매, 품질, 회로) 협의록 및 회의록
+└── 📁 05_Resources/          # 참고 이미지(PNG/SVG), 외부 벤더 사양서

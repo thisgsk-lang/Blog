@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"06a25d20ea8871e1","type":"text","text":"회사 워크플로워","x":-380,"y":-180,"width":250,"height":60},
+		{"id":"bbdea9e8d72889a8","type":"file","file":"RAW/기구설계_프로젝트_진행상황.md","x":0,"y":-320,"width":400,"height":660},
+		{"id":"03c888bc7ea096c6","x":-520,"y":10,"width":250,"height":60,"type":"text","text":"프로젝트 접수"},
+		{"id":"13a7a3e0cd4d4e1b","x":-520,"y":120,"width":250,"height":60,"type":"text","text":"concept meeting"}
+	],
+	"edges":[
+		{"id":"63d940dbdddb7795","fromNode":"06a25d20ea8871e1","fromSide":"bottom","toNode":"03c888bc7ea096c6","toSide":"top"},
+		{"id":"1f67b9e755cedefb","fromNode":"03c888bc7ea096c6","fromSide":"bottom","toNode":"13a7a3e0cd4d4e1b","toSide":"top"}
+	]
+}

@@ -1,0 +1,290 @@
+{
+  "main": {
+    "id": "68b255054559554a",
+    "type": "split",
+    "children": [
+      {
+        "id": "9fd0c84d4073c96a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e656a15cd3b1e4d8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Clippings/비개발자 바이브코더로서 웹 개발에 대해 알아야 할 지식은 이번 웹서버 및 배포 강의로 마무리.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "비개발자 바이브코더로서 웹 개발에 대해 알아야 할 지식은 이번 웹서버 및 배포 강의로 마무리"
+            }
+          },
+          {
+            "id": "adc46b8067558d24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "오래간만입니다..md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "오래간만입니다."
+            }
+          },
+          {
+            "id": "691e2a311a1f27a2",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "그래프 뷰"
+            }
+          },
+          {
+            "id": "22a0488eaaaca5fe",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "캔버스1.canvas",
+                "viewState": {
+                  "x": 20,
+                  "y": 160.5,
+                  "zoom": -0.31236889865555534
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "캔버스1"
+            }
+          },
+          {
+            "id": "56cfb39ad1748bbc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "그래프 뷰"
+            }
+          },
+          {
+            "id": "611702c06f2aeaea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WIKI/07_ZeroToOne.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "07_ZeroToOne"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bc7a29a8a58e128f",
+    "type": "split",
+    "children": [
+      {
+        "id": "0843b7d3562a4118",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c6abfa46814ec581",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "7457327e73768260",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "f6fde84b4171a9fd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ea321d7471bc3b6f",
+    "type": "split",
+    "children": [
+      {
+        "id": "c0654c35e3f7d91a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cdc98fb1c8f4f679",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "백링크"
+            }
+          },
+          {
+            "id": "09fa38c83f82d377",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "나가는 링크"
+            }
+          },
+          {
+            "id": "4b5c432770ae8c46",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "4b006fdb6924c41b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "모든 속성"
+            }
+          },
+          {
+            "id": "6c2c69b2e3226ab9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "개요"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "611702c06f2aeaea",
+  "lastOpenFiles": [
+    "WIKI/05_기업가정신특징.md",
+    "RAW/07_ZeroToOne.pdf",
+    "RAW/06_STARTUP_기업가정신.pdf",
+    "RAW/03_STARTUP의 특성들02.pdf",
+    "RAW/01_ORIENTATION_2026.pdf",
+    "WIKI/15_LEAN_STARTUP.md",
+    "WIKI/10_DESIGN_THINKING_01.md",
+    "RAW/10_DESIGN_THINKING_01.pdf",
+    "RAW/05_기업가정신특징.pdf",
+    "RAW/15_LEAN_STARTUP.pdf",
+    "WIKI/Master_Index.md.tmp.30448.3bd44447ea27",
+    "WIKI/13_VPC.md",
+    "WIKI/12_DESIGN_THIKING_03.md",
+    "WIKI/11_DESIGN_THIKING_02.md",
+    "WIKI/07_ZeroToOne.md",
+    "WIKI/06_STARTUP_기업가정신.md",
+    "WIKI/04_STARTUP_PITCH.md",
+    "WIKI/03_STARTUP의_특성들02.md",
+    "WIKI/02_STARTUP_CASES_0312_01_(1).md",
+    "WIKI/01_ORIENTATION_2026.md",
+    "convert_pdfs_to_markdown.sh",
+    "convert_pdfs_to_markdown.sh.tmp.30448.164dc35aed87",
+    "WIKI/LEAN_Startup_완벽가이드.md",
+    "WIKI/AI토큰효율성_최적화전략.md",
+    "WIKI/경량RAG_시스템_설계.md",
+    "WIKI/개인지식시스템_구축전략.md",
+    "Clippings/비개발자 바이브코더로서 웹 개발에 대해 알아야 할 지식은 이번 웹서버 및 배포 강의로 마무리.md",
+    "WIKI/Master_Index.md",
+    "WIKI/skill.md",
+    "반갑습니다..md",
+    "양실장의 바이브코딩대학.md",
+    "Excalidraw/Drawing 2026-06-13 21.53.44.excalidraw.md",
+    "RAW/Claude_Code_활용법.md",
+    "RAW/AI_에이전트_개념노트.md",
+    "RAW/RAG_시스템_설명.md",
+    "환영합니다..canvas",
+    "캔버스1.canvas"
+  ]
+}
